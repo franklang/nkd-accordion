@@ -1,16 +1,16 @@
 .nkd-accordion{
   .nkd{
-    &-item[data-state="closed"]{
-      > .nkd-level{
-        display: none;
-      }
-    }
-    &-item[data-state="open"]{
-      > .nkd-level{
-        display: block;
-      }
-    }
     &-link{
+      display: block;
+    }
+  }
+  [data-state="closed"]{
+    > .nkd-level{
+      display: none;
+    }
+  }
+  [data-state="open"]{
+    > .nkd-level{
       display: block;
     }
   }
