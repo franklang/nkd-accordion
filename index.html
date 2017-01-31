@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>From scratch multi-level accordion navigation</title>
-        <link rel="stylesheet" href="css/fs-accordion.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        <script src="js/fs-accordion.js"></script>
-    </head>
-    <body>
-        <h1>From scratch multi-level accordion navigation</h1>
-        <nav class="fs-accordion">
-            <ul class="fs-level" data-level="0">
-                <li class="fs-item" data-state="closed">
-                    <a class="fs-link" href="#">Level #0 Item #0</a>
-                    <ul class="fs-level" data-level="1">
-                        <li class="fs-item">
-                            <a class="fs-link" href="#">Level #1 Item #0</a>
-                        </li>
-                        <li class="fs-item" data-state="closed">
-                            <a class="fs-link" href="#">Level #1 Item #1</a>
-                            <ul class="fs-level" data-level="2">
-                                <li class="fs-item" data-state="closed">
-                                    <a class="fs-link" href="#">Level #2 Item #0</a>
-                                    <ul class="fs-level" data-level="3">
-                                        <li class="fs-item">
-                                            <a class="fs-link" href="#">Level #3 Item #0</a>
-                                        </li>
-                                        <li class="fs-item">
-                                            <a class="fs-link" href="#">Level #3 Item #1</a>
-                                        </li>
-                                    </ul>                                
-                                </li>
-                                <li class="fs-item">
-                                    <a class="fs-link" href="#">Level #2 Item #1</a>
-                                </li>
-                                <li class="fs-item">
-                                    <a class="fs-link" href="#">Level #2 Item #2</a>
-                                </li>
-                                <li class="fs-item">
-                                    <a class="fs-link" href="#">Level #2 Item #3</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="fs-item">
-                            <a class="fs-link" href="#">Level #1 Item #2</a>
-                        </li>
-                    </ul>
+  <head>
+    <meta charset="utf-8">
+    <title>[NaKeD] A minimalist ready-to-use and skin HTML5/SASS/jQuery multi-level accordion navigation.</title>
+    <link rel="stylesheet" href="css/nkd-reset.css">
+    <link rel="stylesheet" href="css/nkd-common.css">
+    <link rel="stylesheet" href="css/nkd-accordion-core.css">
+    <link rel="stylesheet" href="css/nkd-accordion-skin.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="js/nkd-accordion.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#demoNakedAccordion').nkdAccordion();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>[NaKeD] Multi-level accordion navigation</h1>
+    <nav id="demoNakedAccordion" class="nkd nkd-accordion">
+      <ul class="nkd-level js-nkd-level" data-level="0">
+        <li class="nkd-item js-nkd-item" data-state="closed">
+          <a class="nkd-link js-nkd-link" href="#">Level #0 Item #0</a>
+          <ul class="nkd-level js-nkd-level" data-level="1">
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Level #1 Item #0</a>
+            </li>
+            <li class="nkd-item js-nkd-item" data-state="closed">
+              <a class="nkd-link js-nkd-link" href="#">Level #1 Item #1</a>
+              <ul class="nkd-level js-nkd-level" data-level="2">
+                <li class="nkd-item js-nkd-item" data-state="closed">
+                  <a class="nkd-link js-nkd-link" href="#">Level #2 Item #0</a>
+                  <ul class="nkd-level js-nkd-level" data-level="3">
+                    <li class="nkd-item js-nkd-item">
+                      <a class="nkd-link js-nkd-link" href="#">Level #3 Item #0</a>
+                    </li>
+                    <li class="nkd-item js-nkd-item">
+                      <a class="nkd-link js-nkd-link" href="#">Level #3 Item #1</a>
+                    </li>
+                  </ul>
                 </li>
-                <li class="fs-item" data-state="closed">
-                    <a class="fs-link" href="#">Level #0 Item #1</a>
-                    <ul class="fs-level" data-level="1">
-                        <li class="fs-item">
-                            <a class="fs-link" href="#">Level #1 Item #0</a>
-                        </li>
-                        <li class="fs-item">
-                            <a class="fs-link" href="#">Level #1 Item #2</a>
-                        </li>
-                    </ul>                
+                <li class="nkd-item js-nkd-item">
+                  <a class="nkd-link js-nkd-link" href="#">Level #2 Item #1</a>
                 </li>
-                <li class="fs-item">
-                    <a class="fs-link" href="#">Level #0 Item #2</a>
+                <li class="nkd-item js-nkd-item">
+                  <a class="nkd-link js-nkd-link" href="#">Level #2 Item #2</a>
                 </li>
-                <li class="fs-item">
-                    <a class="fs-link" href="#">Level #0 Item #3</a>
+                <li class="nkd-item js-nkd-item">
+                  <a class="nkd-link js-nkd-link" href="#">Level #2 Item #3</a>
                 </li>
-                <li class="fs-item">
-                    <a class="fs-link" href="#">Level #0 Item #4</a>
-                </li>
-            </ul>
-        </nav>
-    </body>
+              </ul>
+            </li>
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Level #1 Item #2</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nkd-item js-nkd-item" data-state="closed">
+          <a class="nkd-link js-nkd-link" href="#">Level #0 Item #1</a>
+          <ul class="nkd-level js-nkd-level" data-level="1">
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Level #1 Item #0</a>
+            </li>
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Level #1 Item #2</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nkd-item js-nkd-item">
+          <a class="nkd-link js-nkd-link" href="#">Level #0 Item #2</a>
+        </li>
+        <li class="nkd-item js-nkd-item">
+          <a class="nkd-link js-nkd-link" href="#">Level #0 Item #3</a>
+        </li>
+        <li class="nkd-item js-nkd-item">
+          <a class="nkd-link js-nkd-link" href="#">Level #0 Item #4</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
 </html>

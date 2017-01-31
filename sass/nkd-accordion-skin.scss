@@ -1,0 +1,33 @@
+//
+// skin
+.nkd-accordion{
+  .nkd{
+    &-nav{}
+    &-link{
+      padding: 10px;
+      border: 1px solid #ededed;
+    }
+    &-item[data-state="open"],
+    &-item[data-state="closed"]{
+      > .nkd-link{
+        &:after{
+          margin-left: 10px;
+        }
+      }
+    }
+    &-item[data-state="open"]{
+      > .nkd-link{
+        &:after{
+          content: "-";
+        }
+      }
+    }
+    &-item[data-state="closed"]{
+      > .nkd-link{
+        &:after{
+          content: "+";
+        }
+      }
+    }
+  }
+}
