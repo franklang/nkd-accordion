@@ -1,5 +1,11 @@
 ;(function ($, window, undefined){
-  $.fn.nkdAccordion = function(){
+  $.fn.nkdAccordion = function(options){
+
+    var defaults = {
+      closeAll: false
+    }
+
+    var settings = $.extend({}, defaults, options);
 
     // Set clicked link sublevel state (open/closed)
     function setSubLevelState(element,state){
@@ -29,13 +35,13 @@
         });
 
       if (getSubLevelState == 'closed'){
-        if (getLinkNavLevel == 0){
+        if ((getLinkNavLevel == 0) && (settings.closeAll == true)){
           $(this)
             .parent('.js-nkd-item')
             .siblings('[data-state="open"]')
             .attr('data-state', 'closed');
 
-          closeChildren
+            closeChildren
         }
         setSubLevelState($(this),'open');
       }
