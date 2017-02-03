@@ -12,15 +12,20 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('#demoNakedAccordion').nkdAccordion({
-          closeAll: true
+          closeAll: false
         });
       });
     </script>
   </head>
   <body>
-    <h1>[NaKeD] A minimalist ready-to-use and skin HTML5/SASS/jQuery multi-level accordion navigation.</h1>
+    <h1>[Naked] A minimalist ready-to-use and skin HTML5/SASS/jQuery multi-level accordion navigation.</h1>
     <h2>Options</h2>
-    <p>Set <em>closeAll</em> option to <strong>true</strong> if you want all opened items to close when clicking a new one.</p>
+    <p>By default, all clicked items remain open until you click them again. Set <code>closeAll</code> option to <code>true</code> if you want all previously opened items to close when clicking a new one from root level.</p>
+    <pre>
+      $('#demoNakedAccordion').nkdAccordion({
+        closeAll: true
+      });
+    </pre>
     <nav id="demoNakedAccordion" class="nkd nkd-accordion">
       <ul class="nkd-level js-nkd-level" data-level="0">
         <li class="nkd-item js-nkd-item" data-state="closed">

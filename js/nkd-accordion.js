@@ -26,30 +26,41 @@
         .attr('data-state');
 
       // Close children sublevels
-      var closeChildren = $(this)
-        .parent('.js-nkd-item')
-        .find('[data-state="open"]')
-        .each(function(){
-          $(this)
-            .attr('data-state', 'closed');
-        });
+      function closeChildren(){
+        $(this)
+          .parent('.js-nkd-item')
+          .find('[data-state="open"]')
+          .each(function(){
+            $(this)
+              .attr('data-state', 'closed');
+          });
+          console.log('closeChildren');
+      }
 
       if (getSubLevelState == 'closed'){
+        setSubLevelState($(this),'open');
+
         if ((getLinkNavLevel == 0) && (settings.closeAll == true)){
           $(this)
             .parent('.js-nkd-item')
             .siblings('[data-state="open"]')
             .attr('data-state', 'closed');
 
-            closeChildren
+            closeChildren();
+            console.log('toto');
         }
-        setSubLevelState($(this),'open');
+
       }
 
       else if (getSubLevelState == 'open'){
         setSubLevelState($(this),'closed');
 
-        closeChildren
+        if (settings.closeAll == true){
+          closeChildren();
+        }
+        else if (settings.closeAll == false){
+
+        }
       }
     }
 
