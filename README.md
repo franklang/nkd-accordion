@@ -1,4 +1,4 @@
-# fs-accordion
+# [Naked UI] nkd-accordion
 A minimalist ready-to-use and skin HTML5/SASS/jQuery multi-level accordion navigation.
 
 Live demo: https://jsfiddle.net/oatksfjf/1/
