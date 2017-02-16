@@ -4,5 +4,5 @@
     $(this).find('[data-state="open"]').each(function(){
       $(this).attr('data-state','closed');
     });
-  }
+  };
 }(jQuery, window));
