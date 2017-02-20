@@ -7,13 +7,6 @@
 
     var settings = $.extend({}, defaults, options);
 
-    // Set clicked link sublevel state (open/closed)
-    function setSubLevelState(element,state){
-      element
-        .parent('.js-nkd-item')
-        .attr('data-state', state);
-    }
-
     // Close children sublevels
     function closeChildren(element){
       element
@@ -37,7 +30,7 @@
         .attr('data-state');
 
       if (getSubLevelState == 'closed'){
-        setSubLevelState($(this),'open');
+        nkd.setSubLevelState($(this),'open');
 
         if (settings.closeAll == true){
           $(this)
@@ -51,7 +44,7 @@
       }
 
       else if (getSubLevelState == 'open'){
-        setSubLevelState($(this),'closed');
+        nkd.setSubLevelState($(this),'closed');
 
         if (settings.closeAll == true){
           closeChildren($(this));
