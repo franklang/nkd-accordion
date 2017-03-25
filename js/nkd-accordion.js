@@ -25,7 +25,7 @@
         });
     }
 
-    function onLinkClick(){
+    function onLinkClick(el){
       // Get current nav level of clicked link
       var getLinkNavLevel = $(this)
         .closest('.js-nkd-level')
@@ -57,11 +57,16 @@
           closeChildren($(this));
         }
       }
+
+      // Avoid in-path links to be triggered
+      if ($(this).next('.js-nkd-level').length == 1){
+        el.preventDefault();
+      }
     }
 
     $('.js-nkd-link').on('click', onLinkClick);
 
-  };
+  }; 
 
   // Destroy the accordion.
   // This reverts all accordion elements back to their original state (before calling the accordion).
