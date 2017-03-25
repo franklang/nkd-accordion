@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="css/nkd-accordion-core.css">
     <link rel="stylesheet" href="css/nkd-accordion-skin.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="js/nkd-common.js"></script>
     <script src="js/nkd-accordion.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#demoNakedAccordion').nkdAccordion({
-          closeAll: false
-        });
+        $('#demoNakedAccordion').nkdAccordion();
+
         $('#js-nkd-reset').on('click', function(){
-          $('#demoNakedAccordion').nkdReset();
+          $('#demoNakedAccordion').nkdAccordionDestroy();
         });
       });
     </script>
@@ -30,7 +28,11 @@
         closeAll: true
       });
     </pre>
-    <p><button id="js-nkd-reset" role="button">Reset DOM</button></p>
+    <p>Destroy the accordion. This reverts all accordion elements back to their original state (before calling the accordion).</p>
+    <pre>
+      $('#demoNakedAccordion').nkdAccordionDestroy();
+    </pre>
+    <p><button id="js-nkd-reset" role="button">Destroy accordion</button></p>
     <nav id="demoNakedAccordion" class="nkd nkd-accordion">
       <ul class="nkd-level js-nkd-level" data-level="0">
         <li class="nkd-item js-nkd-item" data-state="closed">

@@ -7,6 +7,13 @@
 
     var settings = $.extend({}, defaults, options);
 
+    // Set clicked link sublevel state (open/closed)
+    function setSubLevelState(element,state){
+      element
+        .parent('.js-nkd-item')
+        .attr('data-state', state);
+    }
+
     // Close children sublevels
     function closeChildren(element){
       element
@@ -30,7 +37,7 @@
         .attr('data-state');
 
       if (getSubLevelState == 'closed'){
-        nkd.setSubLevelState($(this),'open');
+        setSubLevelState($(this),'open');
 
         if (settings.closeAll == true){
           $(this)
@@ -44,7 +51,7 @@
       }
 
       else if (getSubLevelState == 'open'){
-        nkd.setSubLevelState($(this),'closed');
+        setSubLevelState($(this),'closed');
 
         if (settings.closeAll == true){
           closeChildren($(this));
@@ -55,4 +62,12 @@
     $('.js-nkd-link').on('click', onLinkClick);
 
   };
+
+  // Destroy the accordion.
+  // This reverts all accordion elements back to their original state (before calling the accordion).
+  $.fn.nkdAccordionDestroy = function(){
+    $(this).find('[data-state="open"]').each(function(){
+      $(this).attr('data-state','closed');
+    });
+  };  
 }(jQuery, window));
