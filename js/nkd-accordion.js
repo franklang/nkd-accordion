@@ -7,6 +7,14 @@
 
     var settings = $.extend({}, defaults, options);
 
+    // Dynamically adding data-state="close" attribute on Accordion initialization
+    $('.js-nkd-item').each(function(){
+      $(this)
+        .find('.js-nkd-level')
+        .closest('.js-nkd-item')
+        .attr('data-state', 'closed');
+    });
+
     // Set clicked link sublevel state (open/closed)
     function setSubLevelState(element,state){
       element
